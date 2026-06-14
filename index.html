@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集 index</title>
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Zen+Kurenaido&display=swap"
+        rel="stylesheet">
+    <!-- fullPage.js -->
+    <script src="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.js"></script>
+    <!-- fullPage.js CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css" />
+    <!-- 放上 scss 變更的css -->
+    <link rel="stylesheet" href="./css/custom.css">
+    <!-- 引入 CSS 文件 -->
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* * {outline: 1px solid red;} 修正用 */
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- 進度條加載層 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-container">
+            <div class="progress-text" id="progressPercent">0%</div>
+            <div class="progress">
+                <div class="progress-bar loading" id="progressBar" role="progressbar" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                </div>
+            </div>
+            <p class="progress-label">正在為您加載資源中...</p>
+        </div>
+    </div>
+
+    <main class="main-section" id="mainContent">
+        <!-- 主導覽 -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+            style="background-color: #f6f2e2 !important;">
+            <div class="container-fluid position-relative d-flex align-items-center">
+                <!-- 左側：TOP + 導覽 -->
+                <div class="d-flex align-items-center">
+                    <a class="navbar-brand navbar-brand-sm" href="#">TOP</a>
+
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-2 mb-2 mb-lg-0">
+                            <li class="nav-item dropdown hover-dropdown me-3">
+                                <a class="nav-link nav-link-sm dropdown-toggle dynamic-dot" href="#" id="navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    PRODUCTS
+                                </a>
+                                <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Categories 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Categories 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Categories 3</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item me-3">
+                                <a class="nav-link nav-link-sm dynamic-dot" href="#">BRAND STORY</a>
+                            </li>
+                            <li class="nav-item me-3">
+                                <a class="nav-link nav-link-sm dynamic-dot" href="#">NEWS</a>
+                            </li>
+                            <li class="nav-item me-3">
+                                <a class="nav-link nav-link-sm dynamic-dot" href="#">STORES</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 中間：店名 LOGO -->
+                <a class="position-absolute top-50 start-50 translate-middle navbar-brand navbar-brand-logo" href="#"
+                    style="font-size: 24px; letter-spacing: 2px; white-space: nowrap;">
+                    危機就是轉鶏蛋糕
+                </a>
+                <!-- 右側：按鈕 -->
+                <div class="ms-auto d-none d-md-block">
+                    <!-- LOGIN -->
+                    <button type="button" class="border-0 bg-transparent me-2 btn-nav-sm dynamic-dot"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        LOGIN
+                    </button>
+                    <!-- 購物車按鈕 -->
+                    <button class="border-0 bg-transparent position-relative btn-nav-sm" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <i class="bi bi-cart fs-3"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary mt-2">1
+                            <span class="visually-hidden">筆商品</span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 麵包屑 -->
+        <!-- <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="./index.html">
+                        HomePage
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">main</li>
+            </ol>
+        </nav> -->
+
+        <div id="fullpage">
+            <!-- 大背景圖容器 -->
+            <section class="section container-fluid position-relative" data-anchor="home" style="background-image: url('images/index-1.jpg'); background-color: #f6f2e2; background-size: cover; 
+                background-position: center; aspect-ratio: 1 / 0.6; width: 100%;">
+
+                <!-- 文本框 - 右方 -->
+                <div class="position-absolute top-50 end-0 p-4 m-2">
+                    <div class="p-4" style="
+                    color: rgb(196, 196, 196) !important;
+                    max-width: 300px; 
+                    border-radius: 8px;
+                    backdrop-filter: blur(6px);">
+
+                        <!-- 標題 -->
+                        <h2 class="fw-bold mb-4" style="font-size: 44px;">Original Figure</h2>
+                        <!-- 短內文 -->
+                        <p class="text-muted mb-3" style="font-size: 14px; color: rgb(196, 196, 196) !important;">
+                            客製化產品 - 個性化客製化 -
+                        </p>
+                        <!-- 看詳情連結 -->
+                        <div class="d-flex align-items-center gap-2">
+                            <a href="#" class="text-dark fw-500" style="font-size: 1rem;">查看詳情</a>
+                            <a href="#"
+                                class="btn btn-dark rounded-circle p-2 d-flex align-items-center justify-content-center"
+                                style="width: 25px; height: 25px;"><i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- brand story -->
+            <section class="section py-5" style="background-color: #f6f2e2; overflow: hidden;" data-anchor="brandstory">
+                <div class="container py-lg-5">
+                    <div class="row align-items-center">
+                        <!-- 品牌故事文字摘要 -->
+                        <div class="col-lg-4 mb-5 mb-lg-0 ps-4 pe-4">
+                            <div class="brand-header mb-5">
+                                <h2 class="display-5 fw-light text-uppercase mb-1"
+                                    style="font-family: serif; letter-spacing: 2px;">Brand Story</h2>
+                                <p class="small text-muted mb-0" style="letter-spacing: 1px;">品牌故事</p>
+                            </div>
+
+                            <div class="brand-content" style="color: #440E1E;">
+                                <h3 class="h4 fw-bold mb-4">藉著美味的食物成為一家人。<br>讓幸福，更多一些。</h3>
+                                <p class="lh-lg mt-2 mb-4 pb-4" style="font-size: 1.25rem;">
+                                    「危機就是轉機，轉機就是雞蛋糕。」<br>
+                                    2020 年，我們決定把人生低潮轉變成甜蜜的行動。<br>從一顆傳統笑臉雞蛋糕出發，<br>我們創立了「危機就是轉雞蛋糕」。
+                                </p>
+                                <p class="lh-lg mt-2 mb-4 pb-4" style="font-size: 1rem;">
+                                    每一顆笑臉雞蛋糕，都希望帶給你<br><br>把危機轉為轉機的正能量。
+                                    <br><br>我們堅持使用台灣在地小農<br>當天新鮮雞蛋，讓每一口都充滿驚喜與快樂。
+                                </p>
+                                <div class="mt-4">
+                                    <img src="./images/story1.png" class="rounded-3 shadow-sm"
+                                        style="width: 150px; height: 150px; object-fit: cover;" alt="eggcake">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 隨機位置大小圖片區塊 -->
+                        <div class="col-lg-8 position-relative" style="min-height: 500px;">
+                            <div class="text-center">
+                                <img src="./images/mainStory.jpg" class="img-fluid rounded-4 shadow-sm"
+                                    style="width: 70%;" alt="main story">
+                            </div>
+
+                            <div class="position-absolute top-50 start-15 translate-middle-y d-none d-md-block"
+                                style="z-index: 2;">
+                                <img src="./images/chocolate.jpg"
+                                    class="rounded-4 shadow-sm border border-4 border-white"
+                                    style="width: 160px; height: 160px; object-fit: cover;" alt="eggcake">
+                            </div>
+
+                            <div class="position-absolute top-0 end-0 mt-3 d-none d-md-block">
+                                <img src="./images/cheese.jpg" class="rounded-4 shadow-sm"
+                                    style="width: 120px; height: 120px; object-fit: cover;" alt="eggcake">
+                            </div>
+
+                            <div class="position-absolute bottom-0 end-0 mb-5 d-none d-md-block"
+                                style="transform: translateX(120%);">
+                                <img src="./images/story2.png" class="rounded-4 shadow-sm"
+                                    style="width: 180px; height: 180px; object-fit: cover;" alt="eggcake">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-12 text-center">
+                            <a href="#" class="text-decoration-none fw-bold brand-link-hover"
+                                style="color: #440E1E; font-size: 1.1rem; transition: 0.3s;">
+                                📌 點擊了解更多品牌故事 →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- products -->
+            <section class="section" data-anchor="products" style="background-color: #f6f2e2;">
+                <div class="container py-5">
+                    <h2 class="display-5 fw-light text-uppercase mb-1" style="font-family: serif; letter-spacing: 2px;">
+                        PRODUCTS
+                    </h2>
+                    <p class="small text-muted mb-4" style="letter-spacing: 1px;">商品資訊</p>
+
+                    <!-- CSS 輪播容器 -->
+                    <div class="css-carousel">
+                        <!-- 隱藏的控制開關 -->
+                        <input type="radio" name="carousel-control" id="page-1" checked>
+                        <input type="radio" name="carousel-control" id="page-2">
+                        <input type="radio" name="carousel-control" id="page-3">
+                        <input type="radio" name="carousel-control" id="page-4">
+                        <input type="radio" name="carousel-control" id="page-5">
+                        <input type="radio" name="carousel-control" id="page-6">
+                        <input type="radio" name="carousel-control" id="page-7">
+                        <input type="radio" name="carousel-control" id="page-8">
+                        <input type="radio" name="carousel-control" id="page-9">
+
+                        <!-- 輪播視窗 -->
+                        <div class="carousel-window">
+                            <div class="carousel-track" id="main-track">
+                                <!-- 商品 1: 原味 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-white rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/原味.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="原味">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Original</p>
+                                            <p class="mb-0 small text-secondary">原味</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 商品 2: 抹茶 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-white rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/抹茶.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="抹茶">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Matcha</p>
+                                            <p class="mb-0 small text-secondary">抹茶</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 商品 3: 黑巧克力 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-white rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/黑巧克力.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="黑巧克力">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Chocolate</p>
+                                            <p class="mb-0 small text-secondary">巧克力</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 商品 4: 花生醬 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-light rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/花生醬.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="花生醬">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Peanut</p>
+                                            <p class="mb-0 small text-secondary">花生醬</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 商品 5: 摩佐拉起司 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-light rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/摩佐拉起司.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="摩佐拉">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Cheese</p>
+                                            <p class="mb-0 small text-secondary">起司</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 商品 6: 葡萄乾 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-light rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/葡萄乾.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="葡萄乾">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Raisin</p>
+                                            <p class="mb-0 small text-secondary">葡萄乾</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 商品 7: 芒果卡士達 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-light rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/芒果卡士達.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="芒果">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Mango</p>
+                                            <p class="mb-0 small text-secondary">芒果卡士達</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 商品 8: 黑糖麻糬 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-light rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/黑糖麻糬.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="黑糖麻糬">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Brown Sugar Mochi
+                                            </p>
+                                            <p class="mb-0 small text-secondary">黑糖麻糬</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 商品 9: 蔓越莓乾 -->
+                                <div class="carousel-item-unit">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-light rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/蔓越莓乾.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="蔓越莓乾">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Cranberries</p>
+                                            <p class="mb-0 small text-secondary">蔓越莓乾</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 克隆商品 1: 確保第 8 頁能顯示 (8, 9, 1) -->
+                                <div class="carousel-item-unit clone">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-white rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/原味.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="原味">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Original</p>
+                                            <p class="mb-0 small text-secondary">原味</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 克隆商品 2: 確保第 9 頁能顯示 (9, 1, 2) -->
+                                <div class="carousel-item-unit clone">
+                                    <div class="card border-0 bg-transparent">
+                                        <div class="bg-white rounded-4 overflow-hidden shadow-sm mb-3">
+                                            <img src="./images/抹茶.png" class="w-100 object-fit-cover"
+                                                style="aspect-ratio: 1/1;" alt="抹茶">
+                                        </div>
+                                        <div class="px-2">
+                                            <p class="mb-0 fw-bold small text-muted">Flavor | Matcha</p>
+                                            <p class="mb-0 small text-secondary">抹茶</p>
+                                            <p class="fw-bold">$110元 9入
+                                                <span class="small fw-normal text-muted">(tax in)</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 控制圓點與按鈕 -->
+                        <div
+                            class="carousel-indicators-container d-flex align-items-center justify-content-center mt-4">
+                            <!-- 左按鈕 -->
+                            <button class="carousel-btn me-2 pe-3" type="button" id="btn-prev">
+                                <i class="bi bi-arrow-left-circle-fill" style="font-size: 1.5rem;"></i>
+                            </button>
+
+                            <!-- 圓點 Indicators -->
+                            <div class="carousel-indicators position-relative m-0">
+                                <label for="page-1" class="dot" data-page="1"></label>
+                                <label for="page-2" class="dot" data-page="2"></label>
+                                <label for="page-3" class="dot" data-page="3"></label>
+                                <label for="page-4" class="dot" data-page="4"></label>
+                                <label for="page-5" class="dot" data-page="5"></label>
+                                <label for="page-6" class="dot" data-page="6"></label>
+                                <label for="page-7" class="dot" data-page="7"></label>
+                                <label for="page-8" class="dot" data-page="8"></label>
+                                <label for="page-9" class="dot" data-page="9"></label>
+                            </div>
+
+                            <!-- 右按鈕 -->
+                            <button class="carousel-btn ms-2 ps-3" type="button" id="btn-next">
+                                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.5rem;"></i>
+                            </button>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <a href="#" class="text-decoration-none fw-bold" style="color: #440E1E; font-size: 1.1rem;">
+                                📌 點擊了解更多商品資訊 →
+                            </a>
+                        </div>
+                    </div>
+            </section>
+
+            <!-- news -->
+            <section class="section container py-5" data-anchor="news">
+                <!-- 標題 -->
+                <div class="mb-4 reveal delay-1">
+                    <h2 class="display-5 fw-light text-uppercase my-2" style="font-family: serif; letter-spacing: 2px;">
+                        News
+                    </h2>
+                    <p class="small text-muted mb-0" style="letter-spacing: 1px;">
+                        最新消息
+                    </p>
+                </div>
+
+                <!-- News List -->
+                <div class="news-list">
+                    <!-- Item 1 -->
+                    <div class="news-item d-flex align-items-center py-4 border-bottom reveal delay-2">
+                        <img src="images/news1.jpg" class="news-img pe-2 me-3 me-md-5">
+
+                        <div>
+                            <p class="text-muted small mb-1">2026.05.11 | Life</p>
+                            <p class="text-muted small mb-1">BY Sunny Huang</p>
+                            <h4 class="mb-0">不迷信昂貴進口食材！
+                                <br>台中「龍富天婦羅」以台灣旬味與日本老酒造清酒，打造板前風土餐桌
+                            </h4>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="news-item d-flex align-items-center py-4 border-bottom reveal delay-3">
+                        <img src="images/news2.jpg" class="news-img pe-2 me-3 me-md-5">
+
+                        <div>
+                            <p class="text-muted small mb-1">2026.04.29 | Life</p>
+                            <p class="text-muted small mb-1">BY Amber Chiu</p>
+                            <h4 class="mb-0">走進森林裡的美術館餐廳！
+                                <br>苗栗三義「黎森 LiSTEN」以風土料理帶你回歸自然、品嚐土地本味！
+                            </h4>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="news-item d-flex align-items-center py-4 border-bottom reveal delay-4">
+                        <img src="images/news3.jpg" class="news-img pe-2 me-3 me-md-5">
+
+                        <div>
+                            <p class="text-muted small mb-1">2026.03.31 | Event</p>
+                            <p class="text-muted small mb-1">BY Dengyuz Chang</p>
+                            <h4 class="mb-0">3D 攝影拍攝行程</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button -->
+                <div class="text-center mt-4 reveal">
+                    <a href="#" class="btn btn-dark rounded-pill px-5 w-auto"
+                        style="display: inline-block; min-width: 250px;">
+                        📌 過去消息<i class="bi bi-arrow-right-circle-fill ms-4" style="font-size: 1.2rem;"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- stores -->
+            <!-- .container>.row>.col-12>h1.text-center{Store Information} -->
+            <section class="section container-fluid position-relative overflow-hidden" data-anchor="stores">
+                <!-- 跑馬燈 -->
+                <div style="margin: 0 -15px;">
+                    <!-- 向左波浪滾動 -->
+                    <div class="marquee-wave-container">
+                        <div class="marquee-wave-track scroll-left" id="marquee-left">
+                            <!-- JavaScript 會自動填充字符 -->
+                        </div>
+                    </div>
+                    <!-- 向右波浪滾動 -->
+                    <div class="marquee-wave-container">
+                        <div class="marquee-wave-track scroll-right" id="marquee-right">
+                            <!-- JavaScript 會自動填充字符 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- stores內容 -->
+                <div class="row justify-content-center" style="margin-top: 16px; margin-bottom: 24px;">
+                    <div class="col-12 col-lg-9"> <!-- 稍微微調寬度，讓手風琴在大螢幕不會太長 -->
+                        <h2 class="display-5 fw-light text-uppercase m-3 d-flex justify-content-center"
+                            style="font-family: serif; letter-spacing: 2px;">
+                            Store Info</h2>
+                        <p class="small text-muted mb-3 d-flex justify-content-center" style="letter-spacing: 1px;">店舖一覽
+                        </p>
+
+                        <!-- 手風琴區域開始 -->
+                        <div class="accordion shadow-sm" id="storeAccordion">
+                            <!-- 第 1 間店：台北 信義旗艦店 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <div
+                                            class="d-flex flex-column flex-md-row w-100 gap-2 gap-md-4 align-items-md-center">
+                                            <span class="fw-bold fs-5" style="min-width: 150px;">台北 信義旗艦店</span>
+                                            <span><i class="bi bi-telephone text-primary me-2"></i>02-2721234</span>
+                                            <span class="text-muted">
+                                                <i class="bi bi-geo-alt text-danger me-2"></i>
+                                                110 台北市 信義區松仁路777號
+                                            </span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#storeAccordion">
+                                    <div class="accordion-body p-0">
+                                        <!-- 加入 w-100 讓 iframe 響應式填滿容器 -->
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2149.539571612918!2d121.56735766774334!3d25.031350844358585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abba7d8a3649%3A0xb1ef9909254f7ff0!2zMTEw6Ie65YyX5biC5L-h576p5Y2A5p2-5LuB6Lev!5e0!3m2!1szh-TW!2stw!4v1779112802681!5m2!1szh-TW!2stw"
+                                            width="100%" height="400" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                            class="w-100"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 第 2 間店：台北 大安文青店 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <div
+                                            class="d-flex flex-column flex-md-row w-100 gap-2 gap-md-4 align-items-md-center">
+                                            <span class="fw-bold fs-5" style="min-width: 150px;">台北 大安文青店</span>
+                                            <span><i class="bi bi-telephone text-primary me-2"></i>02-2781234</span>
+                                            <span class="text-muted">
+                                                <i class="bi bi-geo-alt text-danger me-2"></i>
+                                                106 台北市 大安區忠孝東路四段200號
+                                            </span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#storeAccordion">
+                                    <div class="accordion-body p-0">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.796950605736!2d121.54961837631674!3d25.04096397781178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abc597c657d5%3A0x861eba7cec3eb023!2zMTA26Ie65YyX5biC5aSn5a6J5Y2A5bu65YCr6YeM5b-g5a2d5p2x6Lev5Zub5q61MjAw6Jmf!5e0!3m2!1szh-TW!2stw!4v1779112883809!5m2!1szh-TW!2stw"
+                                            width="100%" height="400" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                            class="w-100"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 第 3 間店：台中 逢甲商圈店 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        <div
+                                            class="d-flex flex-column flex-md-row w-100 gap-2 gap-md-4 align-items-md-center">
+                                            <span class="fw-bold fs-5" style="min-width: 150px;">台中 逢甲商圈店</span>
+                                            <span><i class="bi bi-telephone text-primary me-2"></i>04-2451234</span>
+                                            <span class="text-muted">
+                                                <i class="bi bi-geo-alt text-danger me-2"></i>
+                                                407 台中市 西屯區福星路555號
+                                            </span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#storeAccordion">
+                                    <div class="accordion-body p-0">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.862273673387!2d120.64277497629584!3d24.176562478382113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469162228fcfa69%3A0x19eb3d2797956852!2zNDA36Ie65Lit5biC6KW_5bGv5Y2A6YCi56aP6YeM56aP5pif6LevNTU16Jmf!5e0!3m2!1szh-TW!2stw!4v1779112972358!5m2!1szh-TW!2stw"
+                                            width="100%" height="400" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                            class="w-100"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 第 4 間店：台南 中西民生店 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        <div
+                                            class="d-flex flex-column flex-md-row w-100 gap-2 gap-md-4 align-items-md-center">
+                                            <span class="fw-bold fs-5" style="min-width: 150px;">台南 中西民生店</span>
+                                            <span><i class="bi bi-telephone text-primary me-2"></i>06-2231234</span>
+                                            <span class="text-muted">
+                                                <i class="bi bi-geo-alt text-danger me-2"></i>
+                                                700 台南市中西區民生路一段99號
+                                            </span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#storeAccordion">
+                                    <div class="accordion-body p-0">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.8273866957543!2d120.19948527626832!3d22.993374079194236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e7663019c21cf%3A0x53119485cdb2e72e!2zNzAw6Ie65Y2X5biC5Lit6KW_5Y2A5Y2X576O6YeM5rCR55Sf6Lev5LiA5q61OTnomZ8!5e0!3m2!1szh-TW!2stw!4v1779113041368!5m2!1szh-TW!2stw"
+                                            width="100%" height="400" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                            class="w-100"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 第 5 間店：高雄 巨蛋商圈店 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        <div
+                                            class="d-flex flex-column flex-md-row w-100 gap-2 gap-md-4 align-items-md-center">
+                                            <span class="fw-bold fs-5" style="min-width: 150px;">高雄 巨蛋商圈店</span>
+                                            <span><i class="bi bi-telephone text-primary me-2"></i>07-6661234</span>
+                                            <span class="text-muted">
+                                                <i class="bi bi-geo-alt text-danger me-2"></i>
+                                                813 高雄市 左營區博愛二路345號
+                                            </span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#storeAccordion">
+                                    <div class="accordion-body p-0">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.7405929293136!2d120.30034467626072!3d22.663458479427163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e05015774808d%3A0x1afd5dd945bcf22a!2zODA06auY6ZuE5biC6byT5bGx5Y2A5piO6Kqg6YeM5Y2a5oSb5LqM6LevMzQ16Jmf!5e0!3m2!1szh-TW!2stw!4v1779113097360!5m2!1szh-TW!2stw"
+                                            width="100%" height="400" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                            class="w-100"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 第 6 間店：台東 海濱觀光店 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        <div
+                                            class="d-flex flex-column flex-md-row w-100 gap-2 gap-md-4 align-items-md-center">
+                                            <span class="fw-bold fs-5" style="min-width: 150px;">台東 海濱觀光店</span>
+                                            <span><i class="bi bi-telephone text-primary me-2"></i>089-3456789</span>
+                                            <span class="text-muted">
+                                                <i class="bi bi-geo-alt text-danger me-2"></i>
+                                                950 台東縣 台東市臨海路一段666號
+                                            </span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                    data-bs-parent="#storeAccordion">
+                                    <div class="accordion-body p-0">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.599016009613!2d121.1469566762625!3d22.743140779370634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346fb922428fde7d%3A0x3c33ef6ef3d5b254!2zOTUw6Ie65p2x57ij6Ie65p2x5biC5paw6IiI6YeM6Ieo5rW36Lev5LiA5q61NjY26Jmf!5e0!3m2!1szh-TW!2stw!4v1779113140581!5m2!1szh-TW!2stw"
+                                            width="100%" height="400" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                            class="w-100"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 手風琴區域結束 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- social -->
+            <section class="section social-section container-fluid py-5" data-anchor="social">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <!-- Logo Image - 居中 -->
+                            <div class="text-center mb-5">
+                                <img src="/images/bottom.png" alt="Company Logo" class="social-logo"
+                                    style="max-width: 200px; height: auto;">
+                                <h3 style="color:#fd7e14 ; font-size: 24px; letter-spacing: 3px;">危機就是轉鶏蛋糕</h3>
+                            </div>
+
+                            <!-- First Navigation Row - PRODUCTS, BRAND STORY -->
+                            <div class="text-center mb-4">
+                                <nav class="social-nav">
+                                    <a href="#products" class="social-nav-link text-decoration-none">PRODUCTS</a>
+                                    <span class="nav-separator"></span>
+                                    <a href="#brandstory" class="social-nav-link text-decoration-none">BRAND STORY</a>
+                                </nav>
+                            </div>
+
+                            <!-- Second Navigation Row -->
+                            <div class="text-center mb-5">
+                                <nav class="social-nav">
+                                    <a href="#news" class="social-nav-link text-decoration-none">NEWS</a>
+                                    <span class="nav-separator"></span>
+                                    <a href="#stores" class="social-nav-link text-decoration-none">STORES</a>
+                                    <span class="nav-separator"></span>
+                                    <a href="#faq" class="social-nav-link text-decoration-none">FAQ</a>
+                                    <span class="nav-separator"></span>
+                                    <a href="#contact" class="social-nav-link text-decoration-none">CONTACT</a>
+                                </nav>
+                            </div>
+
+                            <!-- Social Media Icons - IG, FB, X -->
+                            <div class="text-center">
+                                <div class="social-icons">
+                                    <a href="https://instagram.com" target="_blank" class="social-icon-link"
+                                        aria-label="Instagram" style="font-size: 2rem; text-decoration: none;">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                    <a href="https://facebook.com" target="_blank" class="social-icon-link"
+                                        aria-label="Facebook" style="font-size: 2rem; text-decoration: none;">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                    <a href="https://x.com" target="_blank" class="social-icon-link" aria-label="X"
+                                        style="font-size: 2rem;">
+                                        <i class="bi bi-twitter-x"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section -->
+            <section class="section fp-auto-height">
+                <footer class="py-3 my-auto bg-black text-white w-100">
+                    <div class="container ps-0 pe-0 ms-4 me-0">
+                        <div class="d-flex align-items-center justify-content-lg-start pt-2 pb-2">
+                            <!-- 公司名 -->
+                            <p class="text-center text-white mb-0">© 2026 company</p>
+                            <!-- 分隔符 -->
+                            <span class="text-white-50 mx-2">|</span>
+                            <!-- 導覽 -->
+                            <ul class="nav text-white ps-3 mb-0">
+                                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">FAQ</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">服務條款</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">隱私權政策</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </main>
+
+    <!-- a.position-fixed.bottom-0.end-0.bg-dark{TOP} -->
+    <a href="" class="position-fixed bottom-0 end-0 bg-primary text-black m-3 p-3 text-decoration-none rounded-pill">
+        TOP
+    </a>
+
+    <!-- Modal start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">登入</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- form start -->
+                    <form id="loginForm" class="needs-validation" novalidate>
+                        <!-- 帳號欄位 -->
+                        <div class="form-group-wrapper">
+                            <label for="account" class="form-label">帳號</label>
+                            <input type="text" id="account" name="account" class="form-control" required
+                                pattern=".{4,}$">
+                            <div class="valid-feedback">✓ 帳號可以使用</div>
+                            <div class="invalid-feedback">✗ 此為必填項目，帳號須至少4位</div>
+                        </div>
+
+                        <!-- 密碼欄位 -->
+                        <div class="form-group-wrapper">
+                            <label for="password" class="form-label">密碼</label>
+                            <input type="password" id="password" name="password" class="form-control" required
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$">
+                            <div class="valid-feedback">✓ 密碼格式正確</div>
+                            <div class="invalid-feedback">✗ 密碼需至少6位，並包含英文大小寫與數字</div>
+                            <small class="form-text d-block mt-2">
+                                密碼要求：最少 6 位、包含大小寫英文、數字
+                            </small>
+                        </div>
+
+                        <div class="mb-3 text-end"><a href="#forgetpwd">忘記密碼</a></div>
+                        <div class="mb-3">
+                            <input class="btn btn-primary w-100" type="submit" value="登入">
+                        </div>
+                    </form>
+                    <!-- form end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Offcanvas start -->
+    <!-- Offcanvas End -->
+
+    <!-- jquery.js -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script>
+        const LoadingManager = {
+            // 初始化狀態
+            init() {
+                this.overlay = document.getElementById('loadingOverlay');
+                this.progressBar = document.getElementById('progressBar');
+                this.progressPercent = document.getElementById('progressPercent');
+                this.mainContent = document.getElementById('mainContent');
+                this.currentProgress = 0;
+                this.targetProgress = 0;
+
+                // 模擬進度
+                this.simulateProgress();
+
+                // 監聽真實資源加載
+                this.trackResources();
+
+                return this;
+            },
+
+            // 更新進度條
+            updateProgress(value) {
+                this.targetProgress = Math.min(value, 99); // 保留 1% 給完成動畫
+                this.animateProgressBar();
+            },
+
+            // 動畫進度條
+            animateProgressBar() {
+                if (this.currentProgress < this.targetProgress) {
+                    this.currentProgress += (this.targetProgress - this.currentProgress) * 0.1;
+                    const roundedProgress = Math.round(this.currentProgress);
+
+                    this.progressBar.style.width = roundedProgress + '%';
+                    this.progressPercent.textContent = roundedProgress + '%';
+
+                    if (this.currentProgress < this.targetProgress - 1) {
+                        requestAnimationFrame(() => this.animateProgressBar());
+                    }
+                }
+            },
+
+            // 模擬進度增長
+            simulateProgress() {
+                let progress = 0;
+                const interval = setInterval(() => {
+                    if (progress < 80) {
+                        progress += Math.random() * 15;
+                        this.updateProgress(progress);
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 500);
+            },
+
+            // 追蹤實際資源加載
+            trackResources() {
+                const images = document.querySelectorAll('img');
+                let loadedImages = 0;
+                const totalImages = images.length;
+
+                if (totalImages === 0) {
+                    // 如果沒有圖片，直接完成
+                    setTimeout(() => this.complete(), 500);
+                    return;
+                }
+
+                images.forEach(img => {
+                    // 監聽圖片加載完成
+                    img.addEventListener('load', () => {
+                        loadedImages++;
+                        const progress = 80 + (loadedImages / totalImages) * 15;
+                        this.updateProgress(progress);
+
+                        if (loadedImages === totalImages) {
+                            setTimeout(() => this.complete(), 300);
+                        }
+                    });
+
+                    // 監聽圖片加載失敗（仍然視為完成）
+                    img.addEventListener('error', () => {
+                        loadedImages++;
+                        const progress = 80 + (loadedImages / totalImages) * 15;
+                        this.updateProgress(progress);
+
+                        if (loadedImages === totalImages) {
+                            setTimeout(() => this.complete(), 300);
+                        }
+                    });
+                });
+
+                // 防止無限等待（20秒超時）
+                setTimeout(() => {
+                    if (loadedImages < totalImages) {
+                        this.complete();
+                    }
+                }, 20000);
+            },
+
+            // 完成加載
+            complete() {
+                // 填滿進度條到 100%
+                this.targetProgress = 100;
+                this.progressPercent.textContent = '100%';
+                this.progressBar.style.width = '100%';
+
+                // 延遲隱藏加載層
+                setTimeout(() => {
+                    this.overlay.classList.add('hidden');
+                    this.mainContent.classList.remove('hidden');
+
+                    // 觸發頁面主要 JavaScript 初始化
+                    this.initializeMainContent();
+                }, 800);
+            },
+
+            // 初始化主要內容
+            initializeMainContent() {
+                // fullpage 初始化
+                if (typeof fullpage !== 'undefined') {
+                    var myFullpage = new fullpage('#fullpage', {
+                        licenseKey: 'YOUR_KEY_HERE',
+                        autoScrolling: true,
+                        scrollHorizontally: true,
+                        navigation: true,
+                        navigationPosition: 'right',
+                        navigationTooltips: ['首頁', '品牌故事', '產品資訊', '最新消息', '店鋪資訊', '社群連結'],
+                        showActiveTooltip: true,
+                        anchors: ['home', 'brandstory', 'products', 'news', 'stores', 'social'],
+                        scrollingSpeed: 800,
+                        css3: true,
+                        easingcss3: 'ease-in-out'
+                    });
+                }
+                // 輪播初始化
+                this.initCarousel();
+
+                // News 滑鼠滾動效果
+                this.initRevealAnimation();
+
+                // 跑馬燈
+                this.initMarquee();
+            },
+
+            // 初始化輪播
+            initCarousel() {
+                const carouselState = {
+                    current: 1,
+                    total: 9,
+                    timer: null,
+                    interval: 3000,
+                    isPlaying: false
+                };
+
+                const updatePage = (targetIndex) => {
+                    if (targetIndex > carouselState.total) targetIndex = 1;
+                    if (targetIndex < 1) targetIndex = carouselState.total;
+
+                    carouselState.current = targetIndex;
+                    const radio = document.getElementById(`page-${carouselState.current}`);
+                    if (radio) radio.checked = true;
+                };
+
+                const startAutoPlay = () => {
+                    if (carouselState.isPlaying) return;
+                    carouselState.isPlaying = true;
+                    carouselState.timer = setInterval(() => {
+                        updatePage(carouselState.current + 1);
+                    }, carouselState.interval);
+                };
+
+                const stopAutoPlay = () => {
+                    clearInterval(carouselState.timer);
+                    carouselState.timer = null;
+                    carouselState.isPlaying = false;
+                };
+
+                const resetAutoPlay = () => {
+                    stopAutoPlay();
+                    setTimeout(startAutoPlay, 1500);
+                };
+
+                const container = document.querySelector('.css-carousel');
+                const prevBtn = document.getElementById('btn-prev');
+                const nextBtn = document.getElementById('btn-next');
+                const dots = document.querySelectorAll('.carousel-indicators .dot');
+
+                prevBtn?.addEventListener('click', () => {
+                    updatePage(carouselState.current - 1);
+                    resetAutoPlay();
+                });
+                nextBtn?.addEventListener('click', () => {
+                    updatePage(carouselState.current + 1);
+                    resetAutoPlay();
+                });
+
+                dots.forEach(dot => {
+                    dot.addEventListener('click', () => {
+                        updatePage(parseInt(dot.dataset.page));
+                    });
+                });
+
+                container?.addEventListener('mouseenter', stopAutoPlay);
+                container?.addEventListener('mouseleave', startAutoPlay);
+
+                startAutoPlay();
+            },
+
+            // 初始化 Reveal 動畫
+            initRevealAnimation() {
+                const reveals = document.querySelectorAll('.reveal');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                reveals.forEach(el => observer.observe(el));
+            },
+
+            // 初始化跑馬燈
+            initMarquee() {
+                // 方便未來維護調整
+                const marqueeConfig = {
+                    waveDelay: 0.1,      // 波浪延遲間隔 (秒)
+                    maxDelayIndex: 15,   // 延遲模數（超過數字後循環）
+                    repeats: 4           // 文字重複次數
+                };
+
+                /**
+                 * 創建波浪跑馬燈
+                 * @param {string} elementId - 容器 ID
+                 * @param {string} text - 要顯示的文字
+                 * @param {object} config - 配置對象
+                 */
+                const createWaveMarquee = (elementId, text, config = {}) => {
+                    const container = document.getElementById(elementId);
+                    if (!container) return;
+
+                    // 合併配置
+                    const finalConfig = { ...marqueeConfig, ...config };
+
+                    container.innerHTML = '';
+                    const fullText = (text + ' ').repeat(finalConfig.repeats);
+                    let charIndex = 0;
+
+                    // 使用 DocumentFragment 優化 DOM 插入
+                    const fragment = document.createDocumentFragment();
+
+                    for (let i = 0; i < fullText.length; i++) {
+                        const char = fullText[i];
+                        const span = document.createElement('span');
+
+                        if (char === ' ') {
+                            // 空格處理
+                            span.className = 'marquee-wave-space';
+                        } else {
+                            // 字符處理
+                            span.className = 'marquee-wave-char';
+                            span.textContent = char;
+
+                            // 關鍵改進：設置 inline style，不依賴 CSS nth-child
+                            const delayIndex = charIndex % finalConfig.maxDelayIndex;
+                            span.style.animationDelay = `${delayIndex * finalConfig.waveDelay}s`;
+                        }
+
+                        fragment.appendChild(span);
+                        charIndex++;
+                    }
+
+                    // 一次性添加所有元素到 DOM
+                    container.appendChild(fragment);
+                };
+
+                // 初始化左側跑馬燈（英文）
+                createWaveMarquee(
+                    'marquee-left',
+                    'Designing The Scenes of Everyday Life. Designing The Scenes of Everyday Life. Designing The Scenes of Everyday Life. Designing The Scenes of Everyday Life. Designing The Scenes of Everyday Life.',
+                    { waveDelay: 0.1, maxDelayIndex: 15 }
+                );
+
+                // 初始化右側跑馬燈（中文）
+                createWaveMarquee(
+                    'marquee-right',
+                    '探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。  探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。 探索日常生活中的美好時刻。',
+                    { waveDelay: 0.1, maxDelayIndex: 15 }
+                );
+            }
+        };
+
+        // 當 DOM 準備好時啟動加載管理器
+        document.addEventListener('DOMContentLoaded', () => {
+            LoadingManager.init();
+        });
+    </script>
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const accountInput = document.getElementById('account');
+        const passwordInput = document.getElementById('password');
+
+        // 實時驗證帳號欄位
+        accountInput.addEventListener('input', function () {
+            validateField(this);
+        });
+
+        // 實時驗證密碼欄位
+        passwordInput.addEventListener('input', function () {
+            validateField(this);
+        });
+
+        // 當失焦時也進行驗證
+        accountInput.addEventListener('blur', function () {
+            validateField(this);
+        });
+        passwordInput.addEventListener('blur', function () {
+            validateField(this);
+        });
+
+        // 驗證單個欄位的函數
+        function validateField(field) {
+            const isValid = field.checkValidity();
+
+            if (field.value.trim() === '') {
+                // 空字段 - 顯示紅色叉叉
+                field.classList.remove('is-valid');
+                field.classList.add('is-invalid');
+            } else if (isValid) {
+                // 有效輸入 - 顯示綠色勾勾
+                field.classList.remove('is-invalid');
+                field.classList.add('is-valid');
+            } else {
+                // 無效輸入 - 顯示紅色叉叉
+                field.classList.remove('is-valid');
+                field.classList.add('is-invalid');
+            }
+        }
+
+        // 表單提交驗證
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // 驗證所有欄位
+            validateField(accountInput);
+            validateField(passwordInput);
+
+            // 檢查整個表單是否有效
+            if (loginForm.checkValidity() === false) {
+                event.stopPropagation();
+                return false;
+            }
+
+            // 如果驗證通過，可以提交表單
+            console.log('表單驗證通過！');
+            console.log('帳號:', accountInput.value);
+            console.log('密碼:', passwordInput.value);
+
+            // 這裡可以發送表單到伺服器 例如：提交表單或執行其他操作
+            alert('登入成功！（模擬）');
+
+            // 可選：關閉 Modal
+            // const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+            // modal.hide();
+        });
+
+        // Modal 打開時清空表單並重置驗證狀態
+        document.getElementById('exampleModal').addEventListener('show.bs.modal', function () {
+            loginForm.reset();
+            accountInput.classList.remove('is-valid', 'is-invalid');
+            passwordInput.classList.remove('is-valid', 'is-invalid');
+        });
+    </script>
+</body>
+
+</html>
